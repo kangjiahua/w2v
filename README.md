@@ -158,5 +158,6 @@ W的权重矩阵更新公式为：V_(w_I )=V_(w_I )-η"*EH"
 
 参考来源：
 
-[reference1]https://blog.csdn.net/qq_41664845/article/details/82971728
-[reference2]https://zhuanlan.zhihu.com/p/27234078?utm_source=qq&utm_medium=social&utm_oi=989578670297628672
+[算法原理以及公式推导](https://blog.csdn.net/qq_41664845/article/details/82971728)
+
+[理解Word2Vec之Skip-Gram模型](https://zhuanlan.zhihu.com/p/27234078?utm_source=qq&utm_medium=social&utm_oi=989578670297628672)
