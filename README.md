@@ -43,7 +43,7 @@ N-Gram模型算是对上面词袋模型的补充吧。词袋模型认为文本�
 ### one-word模型
 one-word 是用神经网络来实现N-Gram（N=2时）。即N-Gram是思想，而one-word模型是实现方法。即一个用one-hot编码的词作为输入，通过第一个权重矩阵得到隐藏层，再通过第二个权重矩阵的到输出层的前身，该前身再做softmax得到输出端的向量表示。
 
-[one—word模型]:picture/one-word 模型.png
+[one—word模型]:picture/one-word.png
 ![one—word模型]
 
 设：词汇量的大小为V，隐藏层的大小为N。输入向量是一个one-hot编码的向量，one-hot编码的向量表示为（x_1,x_2,…,x_v），其中只有一个x_k为1，其余的均为0。姑且认为X（V*1），h（N*1）,Y（V*1） 都是列向量
@@ -101,7 +101,8 @@ cbow的基本思想是用中心词的上下文的c个词来预测中心词。
 
 连续词袋模型模型相当于是one-word模型的补充，one-word是一个输入，一个输出，cbow是c个输入，1个输出。
 
-~~这里需要一个图片~~
+[cbow模型]:picture/cbow.jpg
+![cbow模型]
 
 x_1k 到x_"ck" 是上下文从第一个到第C个单词的one-hot编码，这C个one-hot编码通过相应位置加和求平均的方法得到一个1*V的向量，该向量再乘以我们期望得到的第一个矩阵W_"V*N" 来得到隐藏层的向量h_i（一个1*N的向量），即h=1/C W(∑_(i=1)^C▒x_i )（上图的h_i表示的意思可以与上上图的h_i相比较）。然后h_乘以另一个我们期望得到的矩阵W_"N*V" ^‘，得到一个1*V的向量U，再用softmax得到一个1*V的向量Y，其中Y_i最大的那个值就是期待的中心词。通过不断地学习来调整W和W^’的值。
 
@@ -127,7 +128,8 @@ E="-log"（P（w_o |w_(I，1)…w_(I，c)））
 
 skip-gram模型可以看成是与cbow模型相反的，即用一个中心词来推测其附近的c个上下文（注：得到的c个上下文不考虑与中心词之间的距离的影响）。
 
-~~ 这里需要一个图片~~
+[skip-gram模型]:picture/skip-gram.png
+![skip-gram模型]
 
 *数学推导
 
@@ -154,8 +156,6 @@ W的权重矩阵更新公式为：V_(w_I )=V_(w_I )-η"*EH"
 
 其中"EH"=∑_(j=1)^V▒〖EI_j*w_(i,j)^' 〗
 
-参考来源：https://blog.csdn.net/qq_41664845/article/details/82971728
-
-https://zhuanlan.zhihu.com/p/27234078?utm_source=qq&utm_medium=social&utm_oi=989578670297628672
-
-
+参考来源：
+https://blog.csdn.net/qq_41664845/article/details/82971728[reference1]
+https://zhuanlan.zhihu.com/p/27234078?utm_source=qq&utm_medium=social&utm_oi=989578670297628672[reference2]
