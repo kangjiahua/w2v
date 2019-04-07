@@ -156,4 +156,6 @@ W的权重矩阵更新公式为：V_(w_I )=V_(w_I )-η"*EH"
 
 参考来源：https://blog.csdn.net/qq_41664845/article/details/82971728
 
-reference/Efficient_Estimation_of_Word_Representations_in_Ve.pdf[reference1]
+https://zhuanlan.zhihu.com/p/27234078?utm_source=qq&utm_medium=social&utm_oi=989578670297628672
+
+
