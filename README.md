@@ -43,9 +43,7 @@ N-Gram模型算是对上面词袋模型的补充吧。词袋模型认为文本�
 ### one-word模型
 one-word 是用神经网络来实现N-Gram（N=2时）。即N-Gram是思想，而one-word模型是实现方法。即一个用one-hot编码的词作为输入，通过第一个权重矩阵得到隐藏层，再通过第二个权重矩阵的到输出层的前身，该前身再做softmax得到输出端的向量表示。
 
-[one—word模型]:picture/skip-gram.png
-![one—word模型]
-[one—word模型]:
+[one—word模型]:picture/one-word 模型.png
 ![one—word模型]
 
 设：词汇量的大小为V，隐藏层的大小为N。输入向量是一个one-hot编码的向量，one-hot编码的向量表示为（x_1,x_2,…,x_v），其中只有一个x_k为1，其余的均为0。姑且认为X（V*1），h（N*1）,Y（V*1） 都是列向量
